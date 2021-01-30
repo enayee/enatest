@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Gridow</title>
+  <!-- Bootstrap core CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <style>
+    .formtest-root {
+      margin: auto;
+      background-color: #e7eef7;
+      min-height: calc(100vh - 129px);
+    }
+    .formtest-root .test {
+      width: 900px;
+      margin: auto;
+      padding: 60px;
+      background-color: #fff;
+    }
+    @media (max-width: 900px) {
+      .formtest-root .test {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+    .formtest-root .form-title {
+      color: #505050;
+      font-weight: bold;
+      font-size: 2.26rem;
+      font-style: normal;
+      text-align: center;
+    }
+    @media (max-width: 767px) {
+      .formtest-root .form-title {
+        font-size: 20px;
+      }
+    }
+    .formtest-root .field-title {
+      text-align: left;
+      font-weight: bold;
+      width: 50%;
+      margin: auto;
+    }
+    @media (max-width: 767px) {
+      .formtest-root .field-title {
+        width: 90% !important;
+      }
+    }
+    .formtest-root input {
+      margin: 15px 0;
+      padding: 15px 10px;
+      width: 100%;
+      outline: none;
+      border: 1px solid #bbb;
+      border-radius: 20px;
+      display: inline-block;
+      box-sizing: border-box;
+      transition: 0.2s ease all;
+    }
+    @media (max-width: 767px) {
+      .formtest-root input {
+        width: 90% !important;
+      }
+    }
+    .formtest-root input[type=text]:focus, .formtest-root input[type="password"]:focus {
+      border-color: cornflowerblue;
+    }
+    .formtest-root select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none !important;
+      outline: 0;
+      box-shadow: none;
+      background-color: transparent !important;
+      background-image: none;
+      flex: 1;
+      padding: 0 0.5em;
+      cursor: pointer;
+      font-size: 1em;
+      font-family: 'Open Sans', sans-serif;
+      border: 1px solid #bbb;
+    }
+    .formtest-root select::-ms-expand {
+      display: none;
+    }
+    .formtest-root .select-wrapper {
+      position: relative;
+      width: 50%;
+      margin: auto;
+    }
+    @media (max-width: 767px) {
+      .formtest-root .select-wrapper {
+        width: 90%;
+      }
+    }
+    .formtest-root .select {
+      width: 100%;
+      position: relative;
+      display: flex;
+      height: 3em;
+      line-height: 3;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .formtest-root .arrow {
+      position: absolute;
+      z-index: 88;
+      top: 15px;
+      right: 15px;
+      user-select: none;
+    }
+    .formtest-root .select::after {
+      content: '\25BC';
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0 1em;
+      cursor: pointer;
+      pointer-events: none;
+      transition: 0.25s all ease;
+    }
+    .formtest-root .disclaimer {
+      width: 50%;
+      margin: auto;
+      text-align: left;
+    }
+    @media (max-width: 767px) {
+      .formtest-root .disclaimer {
+        width: 90%;
+      }
+    }
+    .formtest-root .submit-button {
+      transition: 0.25s all ease;
+      background: #0069eb;
+      border-radius: 30px;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      padding: 15px 30px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .formtest-root .submit-button:hover {
+      opacity: 0.8;
+    }
+    .formtest-root .submit-button:disabled {
+      background: #bbb;
+      cursor: not-allowed;
+    }
+    
+  </style>
+<body>
+  <!-- Page Content -->
+  <div class="formtest-root">
+    <div class="test">
+      <div class="form-title">
+        Gridow<br>
+        2020 1st Quarter Institutional Investors Conference
+      </div>
+      <div style="width: 100%; margin: auto; padding-top: 50px;">
+        <div class="field-title" style="width: 50%; margin: auto; text-align: left;">姓名/Name</div>
+        <input id="name" style="width: 50%; margin: auto; margin-bottom: 20px;">
+      </div>
+      <div style="width: 100%; margin: auto;">
+        <div class="field-title" style="width: 50%; margin: auto; text-align: left;">公司名稱/Company Name</div>
+        <input id="companyName" style="width: 50%; margin: auto; margin-bottom: 20px;">
+      </div>
+      <div style="width: 100%; margin: auto;">
+        <div class="field-title" style="width: 50%; margin: auto; text-align: left;">角色/Role</div>
+        <div class="select-wrapper">
+          <select class="select" id="role">
+            <option value="賣方分析師(Sell_side_analyst)">賣方分析師(Sell_side_analyst)</option>
+            <option value="買方分析師(Buy_side_analyst)">買方分析師(Buy_side_analyst)</option>
+            <option value="投資組合經理(Portfolio_manager)">投資組合經理(Portfolio_manager)</option>
+            <option value="新聞工作者(Journalist)">新聞工作者(Journalist)</option>
+            <option value="員工(Employee)">員工(Employee)</option>
+            <option value="個人投資者(Individual_investor)">個人投資者(Individual_investor)</option>
+          </select>
+          <div class="arrow">&#9660;</div>
+        </div>
+      </div>
+      <div style="width: 100%; margin: auto;">
+        <div class="field-title" style="width: 50%; margin: auto; text-align: left;">電子郵件/E-mail</div>
+        <input id="email" style="width: 50%; margin: auto; margin-bottom: 20px;">
+      </div>
+      <div style="width: 100%; margin: auto;">
+        <div class="field-title" style="width: 50%; margin: auto; text-align: left;">所在地/Location</div>
+        <div class="select-wrapper">
+          <select id="location" class="select">
+            <option value=""></option>
+            <option value="Taiwan">Taiwan</option>
+            <option value="Australia">Australia</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Canada">Canada</option>
+            <option value="China">China</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="India">India</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Italy">Italy</option>
+            <option value="Japan">Japan</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Norway">Norway</option>
+            <option value="Scotland">Scotland</option>
+            <option value="Singapore">Singapore</option>
+            <option value="South Africa">South Africa</option>
+            <option value="South Korea">South Korea</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="UK">UK</option>
+            <option value="US">US</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="arrow">&#9660;</div>
+        </div>
+      </div>
+      <div class="field-title">重要聲明/Disclaimer： *</div>
+      <p class="disclaimer">
+        1.您所提供之個人資料，將僅供本公司及配合廠商之統計及分析使用。如需刪除或停止利用您所留存之個人資料，請與本公司聯絡。
+        <br>2.本網路廣播所有內容（包含會議翻譯訊息）僅為參考之用，並非任何投資建議。本公司或其他供應商並不為訪客的投資行為負任何責任。
+        <br>3.嚴禁未經授權錄製或散播本網路廣播之影音、文字及簡報內容。
+        <br>1.The personal information that you provide will only be used by the Company and third-party providers for statistics and analysis purposes. You may also request Company to delete or terminate use of personal information retained.
+        <br>2.All content, including the translation version provided on this webcast, is for informational purposes only, not intended for investment advice. Neither the Company nor any of independent providers is liable for any actions taken in reliance on content contained herein.
+        <br>3.Unauthorized recording or re-distribution of the video/audio, text and presentation content of this webcast is strictly prohibited.
+      </p>
+      <div style="width: 50%; margin: auto; text-align: left; margin-bottom: 30px;">
+        <input type="checkbox" style="width: auto" id="checkboxAgree">
+        <label for="checkboxAgree"> 我同意以上條款／I agree to the above terms</label><br>
+      </div>
+      <button class="submit-button" id="sendOrder">提交</button>
+    </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(function(){
+        // 監聽 送出訂單 按鈕點擊
+        // 下面這段主要在組合資料，還有擋使用者不填資料不能送出
+        $('#sendOrder').click(function(e){
+        var status = true;
+        var name = $('#name').val();
+        var companyName = $('#companyName').val();
+        var role = $('#role').val();
+        var email = $('#email').val();
+        var location = $('#location').val();
+
+        $('input').focus(function(){
+          $(this).css('border','');
+        });
+
+        // 擋住不填資料邏輯
+        if(name == ''){
+          $('#name').css('border','1px solid #ff0000');
+          status = false;
+        }
+
+        // 如果 �必填欄位都過了 才會到這邊
+        if(status){
+          // 增加日期資料
+          var currentdate = new Date();
+          var filltime = currentdate.getFullYear() + "/"
+                + (currentdate.getMonth() + 1) + "/"
+                + currentdate.getDate() + "  "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds();
+          // 打包 要的資料
+          var data = {
+            'name' : name,
+            'companyName': companyName,
+            'role': role,
+            'email': email,
+            'location': location,
+            'filltime': filltime
+          }
+          // 呼叫 send ajax function
+          send(data);
+        }
+      });
+    });
+    function send(data){
+      $.ajax({
+        // get type
+        type: "get",
+        // api url - google appscript 產出的 url
+        url: `https://script.google.com/macros/s/AKfycbwHvn9o2q6_w3ZmrfOMMzXFFXwkkLB_JdlQfGUZwlifRrUo5NrvfBCv/exec?sheetId=1aQUllEx5cLi1g8GGxAMs6b6NCWIkyUFPSuRrl7Yr0P8`,
+        // 剛剛整理好的資料帶入
+        headers: {'Content-Type': 'application/json;charset=UTF-8'},
+        data: data,
+        // 資料格式是JSON 
+        dataType: "JSON",
+        // 成功送出 會回頭觸發下面這塊感謝
+        success: function (response) {
+          console.log(response);
+          alert('感謝您的訂購！！');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
