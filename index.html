@@ -162,7 +162,7 @@
     <div class="test">
       <div class="form-title">
         Gridow<br>
-        2021 1st Quarter Institutional Investors Conference
+        20213 1st Quarter Institutional Investors Conference
       </div>
       <div style="width: 100%; margin: auto; padding-top: 50px;">
         <div class="field-title" style="width: 50%; margin: auto; text-align: left;">姓名/Name</div>
@@ -278,14 +278,14 @@
                 + currentdate.getSeconds();
           // 打包 要的資料
           var data = {
+            'sheetId': '1aQUllEx5cLi1g8GGxAMs6b6NCWIkyUFPSuRrl7Yr0P8',
+            'fields': 'name,companyName,role,email,location,filltime',
             'name' : name,
             'companyName': companyName,
             'role': role,
             'email': email,
             'location': location,
             'filltime': filltime,
-            'sheetId': '1aQUllEx5cLi1g8GGxAMs6b6NCWIkyUFPSuRrl7Yr0P8',
-            'fields': 'name,companyName,role,email,location,filltime',
           }
           // 呼叫 send ajax function
           send(data);
@@ -293,14 +293,15 @@
       });
     });
     function send(data){
+      var url = `https://script.google.com/macros/s/AKfycbwHvn9o2q6_w3ZmrfOMMzXFFXwkkLB_JdlQfGUZwlifRrUo5NrvfBCv/exec?sheetId=${data.sheetId}&fields=${data.fields}&name=${data.name}&companyName=${data.companyName}&role=${data.role}&email=${data.email}&location=${data.location}&filltime=${data.filltime}`;
       $.ajax({
         // get type
         type: "get",
         // api url - google appscript 產出的 url
-        url: `https://script.google.com/macros/s/AKfycbwHvn9o2q6_w3ZmrfOMMzXFFXwkkLB_JdlQfGUZwlifRrUo5NrvfBCv/exec`,
+        url: url,
         // 剛剛整理好的資料帶入
         headers: {'Content-Type': 'application/json;charset=UTF-8'},
-        data: data,
+        // data: data,
         dataType: "JSON",
         // 成功送出 會回頭觸發下面這塊感謝
         success: function (response) {
@@ -309,6 +310,33 @@
         }
       });
     }
+
+    // function send(data) {
+    //   var request = new XMLHttpRequest()
+    //   var url = `https://script.google.com/macros/s/AKfycbwHvn9o2q6_w3ZmrfOMMzXFFXwkkLB_JdlQfGUZwlifRrUo5NrvfBCv/exec?sheetId=${data.sheetId}&fields=${data.fields}&name=${data.name}&companyName=${data.companyName}&role=${data.role}&email=${data.email}&location=${data.location}&filltime=${data.filltime}`;
+    //   console.log('data', url)
+    //   // 'sheetId': '1aQUllEx5cLi1g8GGxAMs6b6NCWIkyUFPSuRrl7Yr0P8',
+    //   //       'fields': 'name,companyName,role,email,location,filltime',
+    //   //       'name' : name,
+    //   //       'companyName': companyName,
+    //   //       'role': role,
+    //   //       'email': email,
+    //   //       'location': location,
+    //   //       'filltime': filltime,
+    //   request.open('GET', url, true)
+    //   request.onload = function () {
+    //     // Begin accessing JSON data here
+    //     var data = JSON.parse(this.response)
+    //     if (request.status >= 200 && request.status < 400) {
+    //       alert('Success!')
+    //     } else {
+    //       alert(`Gah, it's not working!`);r
+    //     }
+    //   }
+    // }
+
+
   </script>
 </body>
 </html>
+
